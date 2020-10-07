@@ -1,0 +1,1 @@
+docker exec -it beautiful_testing python exec.py $1 $2

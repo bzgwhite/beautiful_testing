@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  selenium:
+    image: selenium/standalone-chrome:3.141.59-xenon
+    container_name: selenium-hub
+    tty: true
+    ports: 
+      - 4444:4444
+    volumes: 
+      - /dev/shm:/dev/shm
+
+  python:
+    build: .
+    container_name: 'beautiful_testing'
+    command: "/bin/bash"
+    tty: true
+    ports: 
+      - 9876:9876
+    volumes:
+      - ./work:/python_training
+    environment:
+      - 'TZ=Asia/Tokyo'
