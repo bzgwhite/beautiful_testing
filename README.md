@@ -1,11 +1,12 @@
-# python_training_environment
+# beautiful_testing
+
+You can get html & screenshot.
 
 This repo needs docker.
 
-Please exec command.
+Please exec init command.
 
-For MacOS
-```bash init.sh```
+```docker-compose up -d```
 
-For Windows
-```init.bat```
+Next.
+```exec.sh 'https://example.com' 'example'```
