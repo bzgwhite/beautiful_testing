@@ -4,7 +4,6 @@ services:
   selenium:
     image: selenium/standalone-chrome:3.141.59-xenon
     container_name: selenium-hub
-    tty: true
     ports: 
       - 4444:4444
     volumes: 
@@ -12,12 +11,13 @@ services:
 
   python:
     build: .
+    depends_on: 
+      - selenium
     container_name: 'beautiful_testing'
-    command: "/bin/bash"
     tty: true
     ports: 
       - 9876:9876
     volumes:
-      - ./work:/python_training
+      - ./result:/workdir/result
     environment:
       - 'TZ=Asia/Tokyo'

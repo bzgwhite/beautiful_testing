@@ -1,0 +1,10 @@
+.git/
+.gitignore
+work/result/*
+!work/result/.gitkeep
+__pycache__
+work/.empty
+work/.vscode
+.DS_Store
+Dockerfile
+.dockerignore
